@@ -19,3 +19,21 @@ az ad sp create-for-rbac -n "Terraform-Demo" --role="Contributor" --scopes="/sub
   "tenant": "XXXXYXYXYXYXYXYXYYXYXYX"
 }
 ``` 
+
+
+### Export the Azure Auth Variable in your bash RC. 
+```
+export ARM_CLIENT_SECRET="<<password>>"
+export ARM_CLIENT_ID="<<appID>>"
+export ARM_SUBSCRIPTION_ID="<<subscriptionID>>"
+export ARM_TENANT_ID="<<tenant>>"
+```
+
+### Initialize the Bashrc Variables
+```
+source /root/.bashrc
+```
+
+```
+set | grep -i ARM
+```
