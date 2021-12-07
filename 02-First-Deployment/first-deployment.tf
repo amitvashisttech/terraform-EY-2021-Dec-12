@@ -1,10 +1,10 @@
 provider "azurerm" {
-  subscription_id = "xxxxxxxxxxxxxxxxxxxxxx"
-  client_id = "xxxxxxxxxxxxxxxxxxxxxx"
-  client_secret = "xxxxxxxxxxxxxxxxxxxxxx"
-  tenant_id = "xxxxxxxxxxxxxxxxxxxxxx"
+  #  subscription_id = "xxxxxxxxxxxxxxxxxxxxxx"
+  #  client_id = "xxxxxxxxxxxxxxxxxxxxxx"
+  # client_secret = "xxxxxxxxxxxxxxxxxxxxxx"
+  #  tenant_id = "xxxxxxxxxxxxxxxxxxxxxx"
 
-  features {}
+    features {}
 }
 
 
@@ -12,8 +12,10 @@ provider "azurerm" {
 resource "azurerm_resource_group" "example_rg" {
   name     = "example-resources-RG"
   location = "eastus"
- 
+
   tags = {
     owner = "Amit Vashist"
-   }
+    team  = "DevOps"
+    test  = "DevOps-1"
+  }
 }
