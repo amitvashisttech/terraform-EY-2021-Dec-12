@@ -108,7 +108,7 @@ resource "azurerm_virtual_machine" "example_rg" {
 }
 
 
-
+/*
 
 output "PIP" {
   value = azurerm_public_ip.examplepublicip
@@ -117,3 +117,5 @@ output "PIP" {
 output "my_vm_public_ip" {
   value = azurerm_public_ip.examplepublicip.ip_address
 }
+
+*/
