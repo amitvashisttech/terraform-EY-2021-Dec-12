@@ -155,6 +155,28 @@ resource "azurerm_linux_virtual_machine" "myterraformvm" {
     tags = {
         environment = "Terraform Demo"
     }
+
+  connection {
+    type     = "ssh"
+    user     = "amitvashist"
+    private_key = file("${path.root}/.terraform/.ssh/admin_rsa")
+    host     = self.public_ip
+  }
+  
+  provisioner "file" { 
+     source = "./frontend"
+     destination = "~/"
+  }
+
+  provisioner "remote-exec" { 
+    inline = [
+      "chmod +x ~/frontend/run_frontend.sh", 
+      "sudo ~/frontend/run_frontend.sh",
+   ]
+
+ } 
+
+   
 }
 
 
